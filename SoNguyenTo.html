@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Kiểm tra số nguyên tố: :
+    // Tên hàm : isPrime()
+    // Đầu vào: số cần kiểm tra
+    // Thân hàm : 3 trường hợp
+
+    // Dùng vòng lặp for kiểm tra từ 2 -> num - 1
+    // Kiểm tra number có chia hết cho các số từ 2 -> number - 1 hay ko
+    // Nếu có trả về false
+    // Nếu không trả về true
+    // Đầu ra: có return về kiểu dữ liệu boolean (true/false)
+
+    function isPrime(number) {
+      // Th1: < 2
+      if (number < 2) {
+        return false;
+        // Th2 : = 2
+      } else if (number === 2) {
+        return true;
+        // Th3 : > 2
+      } else {
+        for (let i = 2; i < number; i++) {
+          if (number % i == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }
+
+    // Tính tổng dãy số nguyên tố
+    function sumPrime(para) {
+      let sum = 0;
+      for (let i = 0; i < 100; i++) {
+        if (isPrime(arr[i]) === true) {
+          sum += arr[i];
+        }
+      }
+      return sum;
+    }
+    let arr = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
+    let sum = sumPrime(arr);
+    alert(sum);
+  </script>
+</html>
